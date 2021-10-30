@@ -2,11 +2,14 @@
 #include<math.h>
 int main()
 {
-    int res=0,num;
+    double sum=0;
+    int num,i,s;
     printf("Enter the number:");
     scanf("%d",&num);
-    for(int i=1;i<=n;i++)
+    for(i=1;i<=num;i++)
     {
-    res+=log(i);
-    printf("%d",res);
+    sum+=log10(i);
+   }
+   s=floor(sum);
+   printf("%d",s+1); 
 }
