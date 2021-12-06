@@ -1,0 +1,32 @@
+#include<stdio.h>
+int main()
+{
+    int arr[1000],i,n,c=10000,ref=100000,count=1;
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&arr[i]);
+        if(arr[i]<c)
+        c=arr[i];
+    }
+    while(count!=0)
+    {
+        count=0;
+        ref=100000;
+        for(i=0;i<n;i++)
+        {
+            if(arr[i]>=c)
+            {
+                arr[i]-=c;
+                count++;
+                if(arr[i]<ref&&arr[i]!=0)
+                ref=arr[i];
+            }
+        }
+        if(count==0)
+        break;
+        else
+        printf("%d\n",count);
+        c=ref;
+    }
+}
