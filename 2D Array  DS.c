@@ -1,0 +1,36 @@
+#include<stdio.h>
+int main()
+{
+    int arr[7][7],i,j,m,n,temp=0,sum;
+    for(i=1;i<=6;i++)
+    {
+    for(j=1;j<=6;j++)
+    {
+        scanf("%d",&arr[i][j]);
+    }
+    }
+    for(i=1;i<=4;i++)
+    {
+        printf("\n");
+        for(j=1;j<=4;j++)
+        {
+            sum=0;
+            for(m=i;m<=i+2;m++)
+           {
+                for(n=j;n<=j+2;n++)
+                {
+                    if(m==i+1)
+                    {
+                    sum+=arr[i+1][j+1];
+                    break;
+                     }
+                    else
+                    sum+=arr[m][n];
+                }
+            }
+            if(temp>sum)
+            temp=sum;
+        }
+    }
+    printf("%d",temp); 
+}
